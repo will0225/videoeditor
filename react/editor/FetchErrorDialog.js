@@ -1,7 +1,4 @@
-/**
- * @file FetchErrorDialog.js
- * @author Vladan Kudlac <vladankudlac@gmail.com>
- */
+
 
 import React, { Component } from 'react';
 import Modal from 'react-modal';
@@ -16,16 +13,16 @@ export default class FetchErrorDialog extends Component {
 			<div>
 				<Modal
 					isOpen={true}
-					contentLabel="Chyba komunikace se serverem"
+					contentLabel="Error communicating with server"
 					className={'modal'}
 					overlayClassName={'overlay'}
 				>
 
-					<h2 className={'error'}><img src={'/icons/error.svg'} alt={'error'}/>Chyba komunikace se serverem</h2>
+					<h2 className={'error'}><img src={'/icons/error.svg'} alt={'error'}/>Error communicating with server</h2>
 					<div>
 						<i>{this.props.msg}</i>
-						<p>Opakujte akci nebo obnovte stránku v prohlížeči.</p>
-						<button onClick={() => this.props.onClose()}>Zavřít</button>
+						<p>Please try again or refresh the page in your browser.</p>
+						<button onClick={() => this.props.onClose()}>Close</button>
 					</div>
 				</Modal>
 			</div>

@@ -63,7 +63,7 @@ export default class Editor extends Component {
 					{this.state.loading && <LoadingDialog/>}
 					{this.state.showSubmitDialog && <SubmitDialog project={this.state.project} onClose={this.closeSubmitDialog} onProcessing={this.startProcessing} fetchError={this.openFetchErrorDialog}/>}
 					{this.state.showFetchError && <FetchErrorDialog msg={this.state.fetchError} onClose={this.closeFetchErrorDialog}/>}
-					<a href={'/'}><button className="error"><i className="material-icons" aria-hidden="true">arrow_back</i>Zrušit úpravy</button></a>
+					<a href={'/'}><button className="error"><i className="material-icons" aria-hidden="true">arrow_back</i>Cancel edits</button></a>
 					<div className="divider"/>
 					{/*<button><i className="material-icons" aria-hidden="true">language</i>Jazyk</button>*/}
 					{/*<button><i className="material-icons" aria-hidden="true">save_alt</i>Exportovat</button>*/}

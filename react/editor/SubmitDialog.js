@@ -29,7 +29,7 @@ export default class SubmitDialog extends Component {
 			<div>
 				<Modal
 					isOpen={true}
-					contentLabel="Dokončení projektu"
+					contentLabel="Completion of the project"
 					className={'modal'}
 					overlayClassName={'overlay'}
 					onRequestClose={this.handleCloseDialog}
@@ -38,14 +38,14 @@ export default class SubmitDialog extends Component {
 					<h2>Dokončení projektu</h2>
 					<div>
 						<form onSubmit={this.handleSumbitDialog}>
-							<label htmlFor={'email'}>Emailová adresa: </label>
+							<label htmlFor={'email'}>Email address: </label>
 							<input type={'email'} name={'email'} required={true} size={30} value={this.state.email} onChange={this.handleEmailChanged}/>
 							<br/>
-							Doba zpracování projektu závisí na jeho délce.<br/>
-							Zadejte email a my vám zašleme odkaz na výsledné video hned, jak bude zpracované.
+							The processing time of a project depends on its length.<br/>
+							Enter your email and we will send you a link to the resulting video as soon as it is processed.
 							<br/>
-							<input type={'submit'} className={'success'} value={'Zahájit'}/>
-							<button onClick={this.handleCloseDialog}>Storno</button>
+							<input type={'submit'} className={'success'} value={'Start'}/>
+							<button onClick={this.handleCloseDialog}>Cancellation</button>
 						</form>
 					</div>
 				</Modal>

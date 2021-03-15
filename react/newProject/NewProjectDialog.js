@@ -71,14 +71,16 @@ export default class NewProjectDialog extends Component {
 				{this.state.showFetchError && <FetchErrorDialog msg={this.state.fetchError} onClose={this.closeFetchErrorDialog}/>}
 				<Modal
 					isOpen={true}
-					contentLabel="Nový projekt"
+					contentLabel="New Project"
 					className={'modal'}
 					overlayClassName={'null'}
 				>
 
-					<h2 className={'logo'}><img src={'/icons/favicon.svg'} alt={'logo'}/>Videoeditor</h2>
+					<h2 className={'logo'}>
+						{/* <img src={'/icons/favicon.svg'} alt={'logo'}/> */}
+						Video Editor</h2>
 					<div>
-						<button onClick={() => this.createProject()}>Vytvořit nový projekt</button>
+						<button onClick={() => this.createProject()}>Create a new project</button>
 					</div>
 				</Modal>
 			</div>

@@ -66,10 +66,10 @@ export default {
 		}]
 	},{
 		id: 'fadeInBrightness',
-		title: 'Roztmívat obraz',
+		title: 'Fade the image',
 		in: [{
 			id: 'duration',
-			title: 'Doba trvání',
+			title: 'Duration',
 			type: 'duration',
 			value: '00:00:00,000',
 		}],
@@ -82,10 +82,10 @@ export default {
 		}]
 	},{
 		id: 'fadeOutBrightness',
-		title: 'Zatmívat obraz',
+		title: 'Eclipse the image',
 		in: [{
 			id: 'duration',
-			title: 'Doba trvání',
+			title: 'Duration',
 			type: 'duration',
 			value: '00:00:00,000',
 		}],
@@ -100,10 +100,10 @@ export default {
 
 	audioFilters: [{
 		id: 'fadeInVolume',
-		title: 'Postupně zesílit zvuk',
+		title: 'Gradually amplify the sound',
 		in: [{
 			id: 'duration',
-			title: 'Doba trvání',
+			title: 'Duration',
 			type: 'duration',
 			value: '00:00:00,000',
 		}],
@@ -113,10 +113,10 @@ export default {
 		}]
 	},{
 		id: 'fadeOutVolume',
-		title: 'Postupně zeslabit zvuk',
+		title: 'Gradually weaken the sound',
 		in: [{
 			id: 'duration',
-			title: 'Doba trvání',
+			title: 'Duration',
 			type: 'duration',
 			value: '00:00:00,000',
 		}],

@@ -146,11 +146,11 @@ export default class Timeline extends Component {
 	render() {
 		return (
 			<>
-				<button onClick={this.buttonFilter}><i className="material-icons" aria-hidden="true">flare</i>Filtry</button>
+				<button onClick={this.buttonFilter}><i className="material-icons" aria-hidden="true">flare</i>Filters</button>
 				{/*<button><i className="material-icons" aria-hidden="true">photo_filter</i>Přidat přechod</button>*/}
-				<button onClick={this.buttonSplit}><i className="material-icons" aria-hidden="true">flip</i>Rozdělit v bodě</button>
+				<button onClick={this.buttonSplit}><i className="material-icons" aria-hidden="true">flip</i>Divide by point</button>
 				{/*<button><i className="material-icons" aria-hidden="true">menu</i>Vlastnosti</button>*/}
-				<button onClick={this.buttonDel}><i className="material-icons" aria-hidden="true">remove</i>Odebrat</button>
+				<button onClick={this.buttonDel}><i className="material-icons" aria-hidden="true">remove</i>Remove</button>
 				<div id="time">{TimelineModel.dateToString(this.props.time)} / {this.state.duration}</div>
 				<div id="timeline"/>
 				{this.state.showAddFilterDialog && <AddFilterDialog

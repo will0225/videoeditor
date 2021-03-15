@@ -42,11 +42,11 @@ export default class Sources extends Component {
 		// Get duration for image files
 		let duration = null;
 		if (new RegExp(/^image\//).test(this.props.items[id].mime)) {
-			duration = prompt('Zadejte délku trvání', '00:00:00,000');
+			duration = prompt('Enter the duration', '00:00:00,000');
 			if (duration === null) return;
 
 			if (!timeManager.isValidDuration(duration)) {
-				alert('Zadejte nenulovou délku ve formátu HH:MM:SS,sss');
+				alert('Enter a non-zero length in the format HH:MM:SS,sss');
 				this.putResource(id);
 				return;
 			}
@@ -84,7 +84,7 @@ export default class Sources extends Component {
 	render() {
 		return (
 			<div id={'sources'}>
-				<h3><i className="material-icons" aria-hidden="true">video_library</i>Seznam záběrů</h3>
+				<h3><i className="material-icons" aria-hidden="true">video_library</i>List of shots</h3>
 				<table>
 					<tbody>
 						{Object.keys(this.props.items).map(key =>

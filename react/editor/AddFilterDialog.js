@@ -36,16 +36,16 @@ export default class AddFilterDialog extends Component {
 			<div>
 				<Modal
 					isOpen={true}
-					contentLabel="Přidat nový filtr"
+					contentLabel="Add a new filter"
 					className={'modal'}
 					overlayClassName={'overlay'}
 					onRequestClose={this.handleCloseDialog}
 				>
-					<h2>Filtry</h2>
+					<h2>Filter</h2>
 					<div>
 						<table>
 							<tbody>
-								{item.filters.length === 0 && <tr><td>žádné filtry</td></tr>}
+								{item.filters.length === 0 && <tr><td>no filters</td></tr>}
 								{item.filters.map(filter =>
 									<tr key={filter.service}>
 										<td>{AddFilterDialog.getFilter(filter.service).title}</td>
@@ -55,10 +55,10 @@ export default class AddFilterDialog extends Component {
 							</tbody>
 						</table>
 					</div>
-					<h3>Přidat nový filtr</h3>
+					<h3>Add a new filter</h3>
 					<div>
 						<form onSubmit={this.handleAddFilter}>
-							<label htmlFor={'filter'}>Filtr: </label>
+							<label htmlFor={'filter'}>Filter: </label>
 							<select name={'filter'} onChange={this.handleFilterChange}>
 								{filters.videoFilters.map((filter) => <option value={filter.id} key={filter.id}>{filter.title}</option>)}
 								{filters.audioFilters.map((filter) => <option value={filter.id} key={filter.id}>{filter.title}</option>)}
@@ -66,20 +66,20 @@ export default class AddFilterDialog extends Component {
 							<br/>
 							{AddFilterDialog.getFilter(this.state.filter).in[0].id === 'level' &&
 								<>
-									<label htmlFor={'level'}>Úroveň: </label>
+									<label htmlFor={'level'}>Level: </label>
 									<input type={'range'} name={'level'} min={0} max={200} defaultValue={100} onChange={this.handleLevelChange}/>
 									<span> {this.state.level} %</span>
 								</>
 							}
 							{AddFilterDialog.getFilter(this.state.filter).in[0].id === 'duration' &&
 								<>
-									<label htmlFor={'duration'}>Doba trvání: </label>
-									<input type={'text'} name={'duration'} defaultValue={'00:00:00,000'} required={true} pattern={'^\\d{2,}:\\d{2}:\\d{2},\\d{3}$'} title={'Doba trvání ve formátu 00:00:00,000'} onChange={this.handleLevelChange}/>
+									<label htmlFor={'duration'}>Duration: </label>
+									<input type={'text'} name={'duration'} defaultValue={'00:00:00,000'} required={true} pattern={'^\\d{2,}:\\d{2}:\\d{2},\\d{3}$'} title={'Duration in format 00:00:00,000'} onChange={this.handleLevelChange}/>
 								</>
 							}
 							<br/>
-							<input type={'submit'} value={'Přidat filtr'}/>
-							<button onClick={this.handleCloseDialog}>Zavřít</button>
+							<input type={'submit'} value={'Add a filter'}/>
+							<button onClick={this.handleCloseDialog}>Close</button>
 						</form>
 					</div>
 				</Modal>
@@ -108,7 +108,7 @@ export default class AddFilterDialog extends Component {
 
 		let filter = AddFilterDialog.getFilter(this.state.filter);
 		if (filter.in[0].id === 'duration' && !timeManager.isValidDuration(this.state.level)) {
-			alert('Délka trvání musí být nenulová, ve formátu 00:00:00,000');
+			alert('Duration must be nonzero, in 00:00:00,000');
 			return;
 		}
 

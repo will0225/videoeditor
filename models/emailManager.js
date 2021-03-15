@@ -27,22 +27,22 @@ export default {
 		const videoLink = `${server.serverUrl}/project/${project}/finished`;
 
 		const email = {
-			from: '"Vladan Kudláč" <xkudla15@stud.fit.vutbr.cz>',
+			from: '"Vladan Kudlac" <xkudla15@stud.fit.vutbr.cz>',
 			to: recipient,
-			subject: 'Videoeditor - Projekt dokončen', // Subject line
+			subject: 'Video editor - Project completed', // Subject line
 		};
 
 		if (success) {
-			email.html = `<p>Právě bylo dokončeno zpracování výsledného videa vašeho <a href="${projectLink}">projektu</a>.</p>
-				<p>Stáhnout si jej můžete na následujícím odkazu: <a href="${videoLink}">${videoLink}</a></p>
-				<p>Kód pro vložení videa do stránky:</p>
+			email.html = `<p>Your resulting video has just finished processing <a href="${projectLink}">project</a>.</p>
+				<p>You can download it at the following link: <a href="${videoLink}">${videoLink}</a></p>
+				<p>Code to embed video in the page:</p>
 				<pre>&lt;video controls src="${videoLink}" /&gt;</pre>`
 			;
 		}
 		else {
 			email.to += `, ${config.adminEmail}`;
-			email.html = `<p>Váš <a href="${projectLink}">projekt</a> nemohl být zpracován.</p>
-				<p>Omlouváme se za způsobené komplikace, problémem se budeme co nejdříve zabývat.</p>`;
+			email.html = `<p>Your <a href="${projectLink}">Project</a> could not be processed.</p>
+				<p>We apologize for the inconvenience, we will address the issue as soon as possible.</p>`;
 		}
 
 		transporter.sendMail(email, (err) => {

@@ -42,8 +42,8 @@ export default class Uploader extends Component {
 				getUploadParams={this.getUploadParams}
 				onChangeStatus={this.handleChangeStatus}
 				accept="image/*,audio/*,video/*"
-				inputContent={(files, extra) => (extra.reject ? 'Nahrávat lze pouze video, audio a obrázkové soubory.' : 'Nahrát soubory')}
-				inputWithFilesContent={'Nahrát soubory'}
+				inputContent={(files, extra) => (extra.reject ? 'Only video, audio and image files can be recorded.' : 'Nahrát soubory')}
+				inputWithFilesContent={'Upload files'}
 				styles={{
 					dropzoneReject: { borderColor: '#7a281b', backgroundColor: '#DAA' },
 				}}

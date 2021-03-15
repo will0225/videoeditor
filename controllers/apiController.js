@@ -223,7 +223,7 @@ exports.projectPUT = (req, res, next) => {
 			if (isset(req.body.email))
 				emailManager.sendProjectFinished(req.body.email, req.params.projectID, !(err));
 		});
-		res.json({ msg: 'Zpracování zahájeno' });
+		res.json({ msg: 'Processing started' });
 	});
 
 };
@@ -332,7 +332,7 @@ exports.projectFileDELETE = (req, res, next) => {
 			producer.remove();
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Zdroj byl úspěšně odebrán' }),
+				() => res.json({ msg: 'Resource removed successfully' }),
 				err => next(err)
 			);
 		},
@@ -405,7 +405,7 @@ exports.projectFilePUT = (req, res, next) => {
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
 				() => res.json({
-					msg: 'Položka přidána na časovou osu',
+					msg: 'Item added to timeline',
 					timeline: req.body.track,
 				}),
 				err => next(err)
@@ -499,7 +499,7 @@ exports.projectFilterPOST = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Filtr přidán' }),
+				() => res.json({ msg: 'Filter added' }),
 				err => next(err)
 			);
 		},
@@ -569,7 +569,7 @@ exports.projectFilterDELETE = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Filtr odebrán' }),
+				() => res.json({ msg: 'Filter removed' }),
 				err => next(err)
 			);
 		},
@@ -721,7 +721,7 @@ exports.projectTransitionPOST = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Přechod aplikován' }),
+				() => res.json({ msg: 'Transition applied' }),
 				err => next(err)
 			);
 		},
@@ -791,7 +791,7 @@ exports.projectItemDELETE = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Položka smazána' }),
+				() => res.json({ msg: 'Item deleted' }),
 				err => next(err)
 			);
 		},
@@ -900,7 +900,7 @@ exports.projectItemPUTmove = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Položka přesunuta' }),
+				() => res.json({ msg: 'Item moved' }),
 				err => next(err)
 			);
 		},
@@ -973,7 +973,7 @@ exports.projectItemPUTsplit = (req, res, next) => {
 			}
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Položka rozdělena' }),
+				() => res.json({ msg: 'Item split' }),
 				err => next(err)
 			);
 		},
@@ -1006,7 +1006,7 @@ exports.projectTrackPOST = (req, res, next) => {
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
 				() => res.json({
-					msg: 'Stopa přidána',
+					msg: 'Track added',
 					track: newTractor.id,
 				}),
 				err => next(err)
@@ -1067,7 +1067,7 @@ exports.projectTrackDELETE = (req, res, next) => {
 			track.remove();
 
 			projectManager.save(req.params.projectID, root.outerHTML, release).then(
-				() => res.json({ msg: 'Stopa smazána' }),
+				() => res.json({ msg: 'Track deleted' }),
 				err => next(err)
 			);
 		},
